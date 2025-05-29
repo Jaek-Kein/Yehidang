@@ -4,11 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Yehidang/',
   plugins: [
     react({
-      babel: {
-        plugins: ['@emotion/babel-plugin'],
-      },
+      jsxImportSource: '@emotion/react',
     }),
     tailwindcss()
   ],

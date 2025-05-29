@@ -72,7 +72,7 @@ const Desc: React.FC = () => {
             <TopBar />
             <Navigation />
             <GradientContainer>
-                <img src="/Slide1.webp" css={image} />
+                <img src={`${import.meta.env.BASE_URL}Slide1.webp`} css={image} />
                 <GradientOverlay />
             </GradientContainer>
             <div css={{ border: "none", padding: "20px 15px" }}>
@@ -100,7 +100,7 @@ const Desc: React.FC = () => {
                 <Person>
                     <Photo />
                     <Explanation>
-                        <Name>김희중</Name>
+                        <Name>박선영</Name>
                         <div>대표</div>
                         <Description>
                             Lorem ipsum dolor sit amet, consectetur adipiscing

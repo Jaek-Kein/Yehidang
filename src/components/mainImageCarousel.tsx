@@ -18,10 +18,19 @@ const ImageCarousel:React.FC = () => {
         loop={true}
         >
             <SwiperSlide>
-                <img src="/Slide1.webp" css={{width:'100%'}}/>
+                <img src={`${import.meta.env.BASE_URL}Slide1.webp`} css={{width:'100%'}}/>
             </SwiperSlide>
             <SwiperSlide>
-                <img src="/Slide2.webp"/>
+                <img src={`${import.meta.env.BASE_URL}Slide2.webp`}/>
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src={`${import.meta.env.BASE_URL}Slide3.webp`}/>
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src={`${import.meta.env.BASE_URL}Slide4.webp`}/>
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src={`${import.meta.env.BASE_URL}Slide5.webp`}/>
             </SwiperSlide>
         </Swiper>
     )

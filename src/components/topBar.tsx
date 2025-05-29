@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const TopBar: React.FC = () => {
     return(
         <Wrapper>
-            <img src="/LogoGold.png" className="w-auto h-[30px]"/>
+            <img src={`${import.meta.env.BASE_URL}LogoGold.png`} className="w-auto h-[30px]"/>
         </Wrapper>
     )
 }
