@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import MainPage from "./View/mainPage";
 import Desc from "./View/Desc";
 import styled from "@emotion/styled";
 import MainTemp from "./View/maintemp";
