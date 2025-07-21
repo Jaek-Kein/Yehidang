@@ -165,7 +165,8 @@ Please change the parent <Route path="${L}"> to <Route path="${L==="/"?"*":`${L}
 `,Ob=()=>{const n=z.useRef(null),[r,c]=z.useState(0);return db({containerRef:n,page:r,setPage:c,lastPage:Tb,threshold:50}),Fe(Ab,{children:Fe(Mb,{ref:n,page:r,children:[Fe(pb,{}),Fe(Rb,{}),Fe("div",{style:{width:"100%",height:"100%",display:"flex",justifyContent:"center",alignItems:"center"},children:Fe("h1",{children:"세 번째 페이지"})})].map((o,d)=>Fe(Db,{isActive:d===r,isNext:d===r+1,isPrev:d===r-1,children:o},d))})})},xb="#EBCBCE";_t.div`
   background-color: ${xb};
   min-height: 100vh;
-  width: 100%;
+  width: 100vh;
+  overflow: hidden;
 `;const _b=nb`
   @font-face {
     font-family: "행복고흥L";
