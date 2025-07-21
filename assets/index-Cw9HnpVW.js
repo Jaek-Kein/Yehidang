@@ -167,6 +167,7 @@ Please change the parent <Route path="${L}"> to <Route path="${L==="/"?"*":`${L}
   min-height: 100vh;
   width: 100vh;
   overflow: hidden;
+  touch-action: none;
 `;const _b=nb`
   @font-face {
     font-family: "행복고흥L";
