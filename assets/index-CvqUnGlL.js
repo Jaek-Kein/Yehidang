@@ -309,6 +309,15 @@ Please change the parent <Route path="${T}"> to <Route path="${T==="/"?"*":`${T}
   overflow: hidden;
   touch-action: none;
 `;const _E=fS`
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    overscroll-behavior: none; /* Android/Chrome */
+    touch-action: none; /* 스크롤 막기 */
+  }
   @font-face {
     font-family: "행복고흥L";
     src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/행복고흥L.woff")
@@ -325,23 +334,26 @@ Please change the parent <Route path="${T}"> to <Route path="${T==="/"?"*":`${T}
     font-style: normal;
   }
   @font-face {
-    font-family: 'Jeonju_gakR';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/Jeonju_gakR.woff') format('woff');
+    font-family: "Jeonju_gakR";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/Jeonju_gakR.woff")
+      format("woff");
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: 'Jaemin';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jaemin.woff') format('woff');
+  }
+  @font-face {
+    font-family: "Jaemin";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jaemin.woff")
+      format("woff");
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  }
+  @font-face {
+    font-family: "GangwonEdu_OTFBoldA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+      format("woff");
     font-weight: normal;
     font-style: normal;
-}
+  }
 
   * {
   }
