@@ -6,11 +6,25 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 15% 10%;
+  padding: 10% 10%;
   display: flex;
   flex-direction: column;
   gap: 2%;
   background: linear-gradient(to bottom, gray 0%, white 40%);
+`;
+
+const ImageContainer = styled.div`
+  width: auto;
+  height: 250px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  img {
+    height: 300px;
+    object-fit: cover;
+  }
 `;
 
 const Title = styled.div`
@@ -35,11 +49,12 @@ const Desc = styled.div`
 function SecondPage() {
   return (
     <Wrapper>
-      <div style={{ paddingBottom: "20%" }}>
-        <Title style={{ color: "white", textAlign: "center" }}>
-          {data.companyInfo.title}
-        </Title>
-        <Desc style={{ color: "white", textAlign: "center" }}>
+      <ImageContainer>
+        <img src="image1.jpg" />
+      </ImageContainer>
+      <div style={{ marginBottom: "5%" }}>
+        <Title style={{ textAlign: "center" }}>{data.companyInfo.title}</Title>
+        <Desc style={{ textAlign: "center" }}>
           {data.companyInfo.description}
         </Desc>
       </div>
