@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 const ImageContainer = styled.div`
   width: auto;
-  height: 250px;
+  min-height: 250px;
   display: flex;
   overflow: hidden;
   justify-content: center;
@@ -25,6 +25,10 @@ const ImageContainer = styled.div`
     height: 300px;
     object-fit: cover;
   }
+`;
+
+const TextContainer = styled.div`
+  overflow-y: scroll;
 `;
 
 const Title = styled.div`
@@ -52,24 +56,28 @@ function SecondPage() {
       <ImageContainer>
         <img src="image1.jpg" />
       </ImageContainer>
-      <div style={{ marginBottom: "5%" }}>
-        <Title style={{ textAlign: "center" }}>{data.companyInfo.title}</Title>
-        <Desc style={{ textAlign: "center" }}>
-          {data.companyInfo.description}
-        </Desc>
-      </div>
-      <div>
-        <Title>{data.features[0].title}</Title>
-        <Desc>{data.features[0].description}</Desc>
-      </div>
-      <div>
-        <Title>{data.features[1].title}</Title>
-        <Desc>{data.features[1].description}</Desc>
-      </div>
-      <div>
-        <Title>{data.features[2].title}</Title>
-        <Desc>{data.features[2].description}</Desc>
-      </div>
+      <TextContainer>
+        <div style={{ marginBottom: "5%" }}>
+          <Title style={{ textAlign: "center" }}>
+            {data.companyInfo.title}
+          </Title>
+          <Desc style={{ textAlign: "center" }}>
+            {data.companyInfo.description}
+          </Desc>
+        </div>
+        <div>
+          <Title>{data.features[0].title}</Title>
+          <Desc>{data.features[0].description}</Desc>
+        </div>
+        <div>
+          <Title>{data.features[1].title}</Title>
+          <Desc>{data.features[1].description}</Desc>
+        </div>
+        <div>
+          <Title>{data.features[2].title}</Title>
+          <Desc>{data.features[2].description}</Desc>
+        </div>
+      </TextContainer>
     </Wrapper>
   );
 }

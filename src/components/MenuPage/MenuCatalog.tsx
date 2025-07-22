@@ -5,8 +5,10 @@ import data from "./data.json";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 중요 */
+  overflow: hidden; /* 추가 */
 `;
 
 const SelectorWrapper = styled.div`
@@ -40,15 +42,21 @@ const SelectorButton = styled.button<{ selection: boolean }>`
   }
 `;
 
+const ProductContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+`;
+
 const ProductGridRow = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   grid-auto-rows: 115px;
   gap: 10px;
   padding: 20px;
-  max-height: 400px;
-
-  overflow-y: scroll;
+  min-height: calc(100% - 40px);
 
   align-items: start;
   justify-items: center;
@@ -66,7 +74,6 @@ const ProductCard = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
 `;
 
 const ProductPhoto = styled.div`
@@ -107,14 +114,16 @@ function MenuCatalog() {
           </SelectorButton>
         ))}
       </SelectorWrapper>
-      <ProductGridRow>
-        {filteredProducts.map((product, index) => (
-          <ProductCard key={index}>
-            <ProductPhoto></ProductPhoto>
-            <ProductName>{product.Name}</ProductName>
-          </ProductCard>
-        ))}
-      </ProductGridRow>
+      <ProductContainer>
+        <ProductGridRow>
+          {filteredProducts.map((product, index) => (
+            <ProductCard key={index}>
+              <ProductPhoto></ProductPhoto>
+              <ProductName>{product.Name}</ProductName>
+            </ProductCard>
+          ))}
+        </ProductGridRow>
+      </ProductContainer>
     </Wrapper>
   );
 }

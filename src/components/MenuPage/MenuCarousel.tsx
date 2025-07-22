@@ -16,9 +16,9 @@ import { MainPink } from "../../style/colors";
 // 커스텀 스타일
 const CustomSwiper = styled(Swiper)`
   width: 100%;
-  min-height: 350px;
-  height: 45%;
-  padding: 20px 0;
+  min-height: 200px;
+  height: 30%;
+  padding: 10px 0;
 
   .swiper-slide {
     background: linear-gradient(135deg, ${MainPink} 0%, #ad2f59 100%);
@@ -59,7 +59,7 @@ const CustomSwiper = styled(Swiper)`
 
 const SlideContent = styled.div`
   text-align: center;
-  padding: 12%;
+  padding: 15px;
   display: grid;
   grid-template-rows: 1fr auto;
   gap: 5%;
