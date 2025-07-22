@@ -87,8 +87,44 @@ const ProductName = styled.div`
   font-size: 12px;
 `;
 
+const Popup = styled.div<{show:boolean}>`
+  //position
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1000;
+
+  //Layout
+  width: 90%;
+  min-width: 300px;
+  height: 40%;
+  min-height: 300px;
+  background-color: #ffffff81;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 0 10px gray;
+
+  //Function & Animation
+  opacity:${({show}) => (show ? 1 : 0)};
+  pointer-events: ${({show}) => (show ? "auto" : "none")};
+  transition: opacity 0.2s ease-in-out;
+`
+
+const PopupButton = styled.button`
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  background-color: red;
+`
+
 function MenuCatalog() {
   const [activeCategory, setActiveCategory] = useState("전체");
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  const HandlePopup = () => {
+    setPopupOpen(true)
+  }
   // 선택된 카테고리에 따라 제품 필터링
   const filteredProducts =
     activeCategory === "전체"
@@ -117,13 +153,16 @@ function MenuCatalog() {
       <ProductContainer>
         <ProductGridRow>
           {filteredProducts.map((product, index) => (
-            <ProductCard key={index}>
+            <ProductCard key={index} onClick={HandlePopup}>
               <ProductPhoto></ProductPhoto>
               <ProductName>{product.Name}</ProductName>
             </ProductCard>
           ))}
         </ProductGridRow>
       </ProductContainer>
+      <Popup show={popupOpen}>
+          <PopupButton onClick={() => setPopupOpen(prev => !prev)}>닫기</PopupButton>
+      </Popup>
     </Wrapper>
   );
 }
